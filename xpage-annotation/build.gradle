@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
     compile 'com.alibaba:fastjson:1.2.8'
@@ -8,3 +9,15 @@ tasks.withType(JavaCompile) {
 }
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
+//统一声明配置
+publish {
+    artifactId = 'XPages-annotation'
+    userOrg = 'yuhong931219'
+    groupId = 'com.systex.zmmax'
+    repoName = 'yh'
+    uploadName = 'XPages'
+    publishVersion = '1.0.0'
+    desc = 'Request code can be generated automatically'
+    website = 'https://github.com/YuHong931219/XPages'
+    licences = ['Apache-2.0']
+}

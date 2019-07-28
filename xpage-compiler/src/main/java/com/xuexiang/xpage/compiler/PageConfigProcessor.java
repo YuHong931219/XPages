@@ -185,7 +185,7 @@ public class PageConfigProcessor extends AbstractProcessor {
              /*
                private List<PageInfo> workList = new ArrayList<>();
              */
-            FieldSpec reportField = FieldSpec.builder(inputListTypeOfPage, "workList")
+            FieldSpec reportField = FieldSpec.builder(inputListTypeOfPage, "reportList")
                     .addModifiers(Modifier.PRIVATE)
                     .build();
 

@@ -15,27 +15,15 @@ import java.util.Map;
  */
 public class PageInfo implements Serializable {
 
-    /**
-     * 页面名
-     */
+
     private String name;
-    /**
-     * 页面class
-     */
+
     private String classPath;
-    /**
-     * 页面传递的参数
-     */
+
     private String params = "";
 
-    /**
-     * 页面跳转的动画
-     */
     private CoreAnim anim;
 
-    /**
-     * 拓展字段
-     */
     private int extra;
 
     public PageInfo() {
@@ -68,14 +56,6 @@ public class PageInfo implements Serializable {
         this.params = JSON.toJSONString(params);
     }
 
-    /**
-     * 自动编译生成需要使用的构造函数
-     *
-     * @param name
-     * @param classPath
-     * @param params
-     * @param anim
-     */
     public PageInfo(String name, String classPath, String params, CoreAnim anim, int extra) {
         this.name = name;
         this.classPath = classPath;

@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'img-optimizer'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
@@ -20,7 +20,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
     }
-
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -38,3 +41,14 @@ dependencies {
     testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5.4'
 }
 
+publish {
+    artifactId = 'XPages'
+    userOrg = 'yuhong931219'
+    groupId = 'com.systex.zmmax'
+    repoName = 'yh'
+    uploadName = 'XPages'
+    publishVersion = '1.0.0'
+    desc = 'Request code can be generated automatically'
+    website = 'https://github.com/YuHong931219/XPages'
+    licences = ['Apache-2.0']
+}

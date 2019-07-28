@@ -25,8 +25,5 @@ public enum PageCategory {
      */
     report,
 
-    /**
-     * 什么类型都不是
-     */
     empty
 }

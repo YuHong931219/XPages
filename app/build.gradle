@@ -58,5 +58,15 @@ dependencies {
     annotationProcessor project(':xpage-compiler')
     implementation 'com.github.xuexiangjys.XUtil:xutil-core:1.1.5'
     implementation 'com.github.githubwing:ByeBurger:1.2.3'
+}
 
+//统一声明配置
+ext {
+    userOrg = 'yuhong931219'
+    groupId = 'com.systex.zmmax'
+    uploadName = 'XPages'
+    publishVersion = '1.0.0'
+    desc = 'Request code can be generated automatically'
+    website = 'https://github.com/YuHong931219/XPages'
+    licences = ['Apache-2.0']
 }
