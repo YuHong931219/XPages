@@ -42,32 +42,21 @@ import javax.lang.model.util.Types;
 
 import static com.xuexiang.xpage.util.Consts.KEY_MODULE_NAME;
 
-/**
- * 页面配置自动生成器
- *
- * @author yh
- */
+
 @AutoService(Processor.class)
 @SupportedOptions(KEY_MODULE_NAME)
 public class PageConfigProcessor extends AbstractProcessor {
-    /**
-     * 文件相关的辅助类
-     */
+
     private Filer mFiler;
     private Types mTypes;
     private Elements mElements;
-    /**
-     * 日志相关的辅助类
-     */
     private Logger mLogger;
 
     /**
      * Module name, maybe its 'app' or others
      */
     private String moduleName = null;
-    /**
-     * 页面配置所在的包名
-     */
+
     private static final String PACKAGE_NAME = "cn.zmmax.scm.page";
 
     private static final String PAGE_CONFIG_CLASS_NAME = "PageConfig";
@@ -125,11 +114,6 @@ public class PageConfigProcessor extends AbstractProcessor {
         return false;
     }
 
-    /**
-     * 解析页面标注
-     *
-     * @param pageElements 页面对象
-     */
     private void parsePages(Set<? extends Element> pageElements) throws IOException {
         if (CollectionUtils.isNotEmpty(pageElements)) {
             mLogger.info(">>> Found Pages, size is " + pageElements.size() + " <<<");
@@ -189,7 +173,6 @@ public class PageConfigProcessor extends AbstractProcessor {
                     .addModifiers(Modifier.PRIVATE)
                     .build();
 
-            //构造函数
             MethodSpec.Builder constructorBuilder = MethodSpec.constructorBuilder()
                     .addModifiers(Modifier.PRIVATE)
                     .addStatement("mPages = new $T<>()", ClassName.get(ArrayList.class))
@@ -309,7 +292,7 @@ public class PageConfigProcessor extends AbstractProcessor {
                     .build();
 
             CodeBlock javaDoc = CodeBlock.builder()
-                    .add("<p>这是PageConfigProcessor自动生成的类，用以自动进行页面的注册。</p>\n")
+                    .add("<p></p>\n")
                     .add("\n")
                     .add("@author yh \n")
                     .build();
@@ -352,12 +335,7 @@ public class PageConfigProcessor extends AbstractProcessor {
     }
 
 
-    /**
-     * 首字母大写
-     *
-     * @param s 待转字符串
-     * @return 首字母大写字符串
-     */
+
     public static String upperFirstLetter(final String s) {
         if (StringUtils.isEmpty(s) || !Character.isLowerCase(s.charAt(0))) return s;
         return String.valueOf((char) (s.charAt(0) - 32)) + s.substring(1);
