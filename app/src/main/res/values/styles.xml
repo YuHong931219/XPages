@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/xpage_default_actionbar_color</item>
+        <item name="colorPrimaryDark">@color/xpage_default_actionbar_color</item>
+        <item name="colorAccent">@color/xpage_default_actionbar_color</item>
+
+        <item name="android:windowBackground">@android:color/white</item>
+
+        <!--&lt;!&ndash;标题栏的背景颜色&ndash;&gt;-->
+        <!--<item name="xpage_actionbar_color">@color/bar_color</item>-->
+        <!--标题栏的高度-->
+        <item name="xpage_actionbar_height">60dp</item>
+        <!--标题栏标题文字的大小-->
+        <item name="xpage_actionbar_title_text_size">21sp</item>
+        <!--标题栏副标题文字的大小-->
+        <item name="xpage_actionbar_sub_text_size">14sp</item>
+        <!--标题栏动作文字的大小-->
+        <item name="xpage_actionbar_action_text_size">18sp</item>
+        <!--标题栏动作图片的padding-->
+        <item name="xpage_actionbar_action_padding">6dp</item>
+        <!--标题栏两侧文字的padding-->
+        <item name="xpage_actionbar_side_text_padding">16dp</item>
+
+        <item name="XPageTitleBarStyle">@style/XPageTitleBar.Custom</item>
+
+        <item name="android:windowAnimationStyle">@style/WindowAnimStyle</item>
+    </style>
+
+    <style name="XPageTitleBar.Custom">
+        <item name="tb_immersive">false</item>
+        <item name="tb_centerGravity">center</item>
+    </style>
+
+
+    <style name="WindowAnimStyle" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/xpage_slide_in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/xpage_slide_out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/xpage_slide_in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/xpage_slide_out_right</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
+        <item name ="statusBarBackground">@null</item>
+    </style>
+</resources>
