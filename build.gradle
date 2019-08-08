@@ -46,7 +46,7 @@ ext {
     userOrg = 'yuhong931219'
     groupId = 'com.systex.zmmax.Xpages'
     uploadName = 'XPages'
-    publishVersion = '1.0.1'
+    publishVersion = '1.0.2'
     desc = 'page catrgory'
     website = 'https://github.com/YuHong931219/XPages'
     licences = ['Apache-2.0']

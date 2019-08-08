@@ -196,7 +196,7 @@ public class PageConfigProcessor extends AbstractProcessor {
                     PageCategory pageCategory = page.category();
                     switch (pageCategory) {
                         case purchase:
-                            constructorBuilder.addStatement("purchaseList.add(new $T($S, $S, $S, $T.$L, $L, $S))",
+                            constructorBuilder.addStatement("purchaseList.add(new $T($S, $S, $S, $T.$L, $L, $L))",
                                     PageInfo.class,
                                     name,
                                     tm.toString(),
@@ -206,7 +206,7 @@ public class PageConfigProcessor extends AbstractProcessor {
                                     extra, sort);
                             break;
                         case warehouse:
-                            constructorBuilder.addStatement("warehouseList.add(new $T($S, $S, $S, $T.$L, $L, $S))",
+                            constructorBuilder.addStatement("warehouseList.add(new $T($S, $S, $S, $T.$L, $L, $L))",
                                     PageInfo.class,
                                     name,
                                     tm.toString(),
@@ -216,7 +216,7 @@ public class PageConfigProcessor extends AbstractProcessor {
                                     extra, sort);
                             break;
                         case work:
-                            constructorBuilder.addStatement("workList.add(new $T($S, $S, $S, $T.$L, $L, $S))",
+                            constructorBuilder.addStatement("workList.add(new $T($S, $S, $S, $T.$L, $L, $L))",
                                     PageInfo.class,
                                     name,
                                     tm.toString(),
@@ -226,7 +226,7 @@ public class PageConfigProcessor extends AbstractProcessor {
                                     extra, sort);
                             break;
                         case report:
-                            constructorBuilder.addStatement("reportList.add(new $T($S, $S, $S, $T.$L, $L, $S))",
+                            constructorBuilder.addStatement("reportList.add(new $T($S, $S, $S, $T.$L, $L, $L))",
                                     PageInfo.class,
                                     name,
                                     tm.toString(),

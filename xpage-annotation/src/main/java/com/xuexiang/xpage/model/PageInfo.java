@@ -152,7 +152,11 @@ public class PageInfo implements Serializable {
         return this;
     }
 
-    public PageInfo(int sort) {
+    public int getSort() {
+        return sort;
+    }
+
+    public void setSort(int sort) {
         this.sort = sort;
     }
 
