@@ -41,7 +41,7 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
-//统一声明配置
+//统一声明配置  cb32e6c7dc3d31c9bb51f18446e816a494e2abfc
 ext {
     userOrg = 'yuhong931219'
     groupId = 'com.systex.zmmax.Xpages'
