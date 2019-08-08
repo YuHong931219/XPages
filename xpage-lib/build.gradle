@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'bintray-release'
 
 android {
     compileSdkVersion 28
@@ -43,12 +43,12 @@ dependencies {
 
 publish {
     artifactId = 'XPages'
-    userOrg = 'yuhong931219'
-    groupId = 'com.systex.zmmax'
     repoName = 'yh'
-    uploadName = 'XPages'
-    publishVersion = '1.0.0'
-    desc = 'Request code can be generated automatically'
-    website = 'https://github.com/YuHong931219/XPages'
-    licences = ['Apache-2.0']
+    userOrg = rootProject.userOrg
+    groupId = rootProject.groupId
+    uploadName = rootProject.uploadName
+    publishVersion = rootProject.publishVersion
+    desc = rootProject.desc
+    website = rootProject.website
+    licences = rootProject.licences
 }

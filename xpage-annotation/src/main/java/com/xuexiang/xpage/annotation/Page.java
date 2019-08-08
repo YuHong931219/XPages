@@ -23,4 +23,6 @@ public @interface Page {
     int extra() default -1;
 
     PageCategory category() default PageCategory.empty;
+
+    int sort() default 0;
 }

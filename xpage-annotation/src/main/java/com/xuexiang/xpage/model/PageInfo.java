@@ -26,6 +26,8 @@ public class PageInfo implements Serializable {
 
     private int extra;
 
+    private int sort;
+
     public PageInfo() {
 
     }
@@ -62,6 +64,15 @@ public class PageInfo implements Serializable {
         this.params = params;
         this.anim = anim;
         this.extra = extra;
+    }
+
+    public PageInfo(String name, String classPath, String params, CoreAnim anim, int extra, int sort) {
+        this.name = name;
+        this.classPath = classPath;
+        this.params = params;
+        this.anim = anim;
+        this.extra = extra;
+        this.sort = sort;
     }
 
     public static String getParams(String[] params) {
@@ -139,6 +150,10 @@ public class PageInfo implements Serializable {
     public PageInfo setExtra(int extra) {
         this.extra = extra;
         return this;
+    }
+
+    public PageInfo(int sort) {
+        this.sort = sort;
     }
 
     @Override

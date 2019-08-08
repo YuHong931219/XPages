@@ -178,7 +178,8 @@ public class PageConfigProcessor extends AbstractProcessor {
                     .addStatement("mPages = new $T<>()", ClassName.get(ArrayList.class))
                     .addStatement("purchaseList = new $T<>()", ClassName.get(ArrayList.class))
                     .addStatement("warehouseList = new $T<>()", ClassName.get(ArrayList.class))
-                    .addStatement("workList = new $T<>()", ClassName.get(ArrayList.class));
+                    .addStatement("workList = new $T<>()", ClassName.get(ArrayList.class))
+                    .addStatement("reportList = new $T<>()", ClassName.get(ArrayList.class));
 
 
             TypeMirror tm;
@@ -191,47 +192,48 @@ public class PageConfigProcessor extends AbstractProcessor {
                     Page page = element.getAnnotation(Page.class);
                     name = StringUtils.isEmpty(page.name()) ? element.getSimpleName().toString() : page.name();
                     int extra = page.extra();
+                    int sort = page.sort();
                     PageCategory pageCategory = page.category();
                     switch (pageCategory) {
                         case purchase:
-                            constructorBuilder.addStatement("purchaseList.add(new $T($S, $S, $S, $T.$L, $L))",
+                            constructorBuilder.addStatement("purchaseList.add(new $T($S, $S, $S, $T.$L, $L, $S))",
                                     PageInfo.class,
                                     name,
                                     tm.toString(),
                                     PageInfo.getParams(page.params()),
                                     ClassName.get(CoreAnim.class),
                                     page.anim(),
-                                    extra);
+                                    extra, sort);
                             break;
                         case warehouse:
-                            constructorBuilder.addStatement("warehouseList.add(new $T($S, $S, $S, $T.$L, $L))",
+                            constructorBuilder.addStatement("warehouseList.add(new $T($S, $S, $S, $T.$L, $L, $S))",
                                     PageInfo.class,
                                     name,
                                     tm.toString(),
                                     PageInfo.getParams(page.params()),
                                     ClassName.get(CoreAnim.class),
                                     page.anim(),
-                                    extra);
+                                    extra, sort);
                             break;
                         case work:
-                            constructorBuilder.addStatement("workList.add(new $T($S, $S, $S, $T.$L, $L))",
+                            constructorBuilder.addStatement("workList.add(new $T($S, $S, $S, $T.$L, $L, $S))",
                                     PageInfo.class,
                                     name,
                                     tm.toString(),
                                     PageInfo.getParams(page.params()),
                                     ClassName.get(CoreAnim.class),
                                     page.anim(),
-                                    extra);
+                                    extra, sort);
                             break;
                         case report:
-                            constructorBuilder.addStatement("reportList.add(new $T($S, $S, $S, $T.$L, $L))",
+                            constructorBuilder.addStatement("reportList.add(new $T($S, $S, $S, $T.$L, $L, $S))",
                                     PageInfo.class,
                                     name,
                                     tm.toString(),
                                     PageInfo.getParams(page.params()),
                                     ClassName.get(CoreAnim.class),
                                     page.anim(),
-                                    extra);
+                                    extra, sort);
                             break;
                     }
                     constructorBuilder.addStatement("mPages.add(new $T($S, $S, $S, $T.$L, $L))",
